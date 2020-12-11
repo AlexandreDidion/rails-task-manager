@@ -3,6 +3,7 @@
 <% @tasks.each do |task| %>
   <h3><%= link_to task.title.capitalize, task_path(task) %></h3>
   <input type="checkbox" name="completed" <%= task.completed ? "checked" : "" %> >
+  <p><%= task.completed ? "Done" : "Not completed yet" %></p>
   <%= link_to "Destroy", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
 
